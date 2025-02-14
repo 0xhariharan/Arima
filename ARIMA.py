@@ -1,4 +1,18 @@
-pip install -r requirements.txt
+import subprocess
+import sys
+
+# Ensure required libraries are installed
+required_libraries = [
+    'yfinance', 
+    'pandas', 
+    'matplotlib', 
+    'numpy', 
+    'statsmodels',
+    'streamlit'
+]
+
+for lib in required_libraries:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", lib])
 
 import streamlit as st
 import yfinance as yf
